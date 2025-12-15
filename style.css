@@ -668,6 +668,146 @@ footer img{
     max-width: 100%;
 }
 
+/* --- Cart Icon Counter Styling --- */
+.cart-count {
+    background-color: var(--primary-color); /* Pink/Sale Color from your image */
+    color: var(--light-color);
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    position: absolute;
+    top: -5px; /* Adjust as needed */
+    right: -10px; /* Adjust as needed */
+    min-width: 18px;
+    text-align: center;
+}
+
+/* --- Cart Panel Styling (Drawer/Overlay) --- */
+.cart-panel {
+    position: fixed; /* Fixed position relative to viewport */
+    top: 0;
+    right: 0;
+    width: 350px; /* Standard panel width */
+    height: 100%;
+    background-color: var(--light-color);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it's above other content */
+    transform: translateX(100%); /* Hides the panel off-screen initially */
+    transition: transform 0.3s ease-in-out; /* Smooth slide animation */
+    display: flex;
+    flex-direction: column;
+}
+
+/* State to show the panel */
+.cart-panel.open {
+    transform: translateX(0);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--light-color);
+}
+
+.cart-items {
+    flex-grow: 1; /* Allows the items list to take up available space */
+    overflow-y: auto; /* Enables scrolling for many items */
+    padding: 15px;
+}
+
+.cart-footer {
+    padding: 15px;
+    border-top: 1px solid var(--light-color);
+}
+
+.cart-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color); /* Pink color */
+    color: var(--light-color);
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* Style for individual items*/
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted var(--light-color);
+}
+
+.cart-item-info {
+    flex-grow: 1;
+    padding: 0 10px;
+}
+
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+/* --- New CSS for Quantity Controls --- */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.quantity-btn {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ccc;
+    background-color: var(--light-color);
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0;
+    line-height: 1; /* Helps vertically center the +/- sign */
+}
+
+.item-quantity {
+    padding: 0 5px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.item-subtotal {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+
+.remove-all-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em; /* Makes the icon a good size */
+    color: #cc0000; /* Red color is standard for delete/danger */
+    padding: 5px;
+    margin-left: 10px; /* Space between the item info and the icon */
+    align-self: flex-start; /* Aligns it to the top of the cart item container */
+}
+
+.remove-all-btn:hover {
+    opacity: 0.7;
+}
+
+
+
 /*Responsiveness*/
 
 @media (max-width: 992px){
@@ -681,7 +821,7 @@ footer img{
         position: fixed;
         top: 80px;
         left: -100%;
-        width: 100%;
+        width: 500px;
         height: calc(100vh - 80px);
         background-color: white;
         flex-direction: column;

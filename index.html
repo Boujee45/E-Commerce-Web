@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Shopease - premium online store</title>
+        <link rel="website icon" class="fas fa-shopping-bag">
         <link rel="Stylesheet" href="style.css">
         <link rel="Stylesheet" href="fontawesome">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -33,9 +34,9 @@
                 <div class="header-icons">
                     <i class="fas fa-search" id="search-toggle"></i>
                     <i class="fas fa-user" ></i>
-                    <div class="cart-icon">
+                    <div class="cart-icon" id="cart-icon">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
+                        <span class="cart-count" id="cart-count">0</span>
                     </div>
                     <div class="mobile-menu-btn">
                         <i class="fas fa-bars"></i>
@@ -148,7 +149,7 @@
                                         <span class="old-price">$199</span>
                                         $149
                                     </div>                                
-                                    <button class="add-to-cart">Add to cart</button>
+                                    <button class="add-to-cart" data-id="1" data-name="Bluetooth Headphone" data-price="149" data-img="img/img2/images (15).jpeg">Add to cart</button>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +176,7 @@
                                         <!--<span class="old-price">$129</span>-->
                                         $149
                                     </div>                                
-                                    <button class="add-to-cart">Add to cart</button>
+                                    <button class="add-to-cart" data-id="2" data-name="Laptop" data-price="149" data-img="img/img2/laptop-5673901_1280.jpg">Add to cart</button>
                                 </div>
                             </div>
                         </div>
@@ -202,12 +203,12 @@
                                         <!--<span class="old-price">$190</span>-->
                                         $149
                                     </div>                                
-                                    <button class="add-to-cart">Add to cart</button>
+                                    <button class="add-to-cart" data-id="3" data-name="workout shoe" data-price="149" data-img="img/img2/images (10).jpeg">Add to cart</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                
+
             </div>
         </section>
 
@@ -325,6 +326,24 @@
                 </div>
             </div>
         </Footer>
+
+        <div id="cartPanel" class="cart-panel">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button id="closeCartBtn">X</button>
+            </div>
+            <div id="cartItems" class="cart-items">
+                <p class="empty-message">Your cart is empty.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    Total: $<span id="cartTotal">0.00</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+
+
 
         <script src="script.js"></script>
     </body>

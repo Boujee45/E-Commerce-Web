@@ -147,6 +147,7 @@ header img{
     transition: color 0.3s ease;
 }
 
+.nav-links li a.active,
 .nav-links a:hover{
     color: var(--primary-color);
 }

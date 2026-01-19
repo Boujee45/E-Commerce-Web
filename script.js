@@ -58,6 +58,18 @@ dots.forEach(dot => {
 
 });
 
+//Nav Links Active
+
+const navLink = document.querySelectorAll('.nav__link');
+
+navLink.forEach((link) => {
+    link.addEventListener("click", () => {
+        navLink.forEach(L => L.classList.remove('active'));
+
+        link.classList.add('active');
+    });
+});
+
 
 // --- DOM Element Selection ---
 const cartCount = document.getElementById('cart-count');

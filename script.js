@@ -7,6 +7,14 @@ mobileMenuBtn.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 })
 
+window.addEventListener("scroll", () => {
+    if(navLinks.classList.contains("active"))
+    {
+        navLinks.classList.remove("active")
+    }
+})
+
+
 window.addEventListener('click', () => {
     if(navLinks.classList.contains("open"))
     {
